@@ -68,17 +68,34 @@ class ApiService {
     return takeAction("startgame", { username: localStorage.getItem("cardgame_account") });
   }
 
-  static playCard(cardIdx) {
-    return takeAction("playcard", { username: localStorage.getItem("cardgame_account"), player_card_idx: cardIdx });
+  static playCard() {
+    return takeAction("playcard", { username: localStorage.getItem("cardgame_account")});
   }
 
-  static nextRound() {
-    return takeAction("nextround", { username: localStorage.getItem("cardgame_account") });
-  }
 
   static endGame() {
     return takeAction("endgame", { username: localStorage.getItem("cardgame_account") });
   }
+
+  static change_turn(){
+    return takeAction("change_turn", { username: localStorage.getItem("cardgame_account") });
+  }
+
+  static refund(){
+    return takeAction("refund", { username: localStorage.getItem("cardgame_account") });
+  }
+
+  static refundbyowner(){
+    return takeAction("refundbyowner", { username: localStorage.getItem("cardgame_account") });
+  }
+
+  static user_transfer(){
+    return takeAction("user_transfer", { username: localStorage.getItem("cardgame_account") });
+  }
+
+
+
+  
 
   static async getUserByName(username) {
     try {
